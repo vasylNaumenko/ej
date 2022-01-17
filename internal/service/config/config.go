@@ -3,7 +3,7 @@ package config
 import (
 	"fmt"
 
-	"ej/internal/repository"
+	"github.com/vasylNaumenko/ej/internal/repository"
 )
 
 // Service defines the config service

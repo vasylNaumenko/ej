@@ -9,8 +9,8 @@ import (
 
 	"github.com/spf13/viper"
 
-	mainApp "ej/internal/app"
-	"ej/internal/domain/config"
+	mainApp "github.com/vasylNaumenko/ej/internal/app"
+	"github.com/vasylNaumenko/ej/internal/domain/config"
 )
 
 var cfgFile string

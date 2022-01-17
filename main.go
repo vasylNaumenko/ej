@@ -15,7 +15,7 @@ limitations under the License.
 */
 package main
 
-import "ej/cmd"
+import "github.com/vasylNaumenko/ej/cmd"
 
 func main() {
 	cmd.Execute()

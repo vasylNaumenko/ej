@@ -1,4 +1,4 @@
-module ej
+module github.com/vasylNaumenko/ej
 
 go 1.17
 

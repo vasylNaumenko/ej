@@ -6,7 +6,7 @@ import (
 
 	"github.com/andygrunwald/go-jira"
 
-	domain "ej/internal/domain/config"
+	domain "github.com/vasylNaumenko/ej/internal/domain/config"
 )
 
 type (

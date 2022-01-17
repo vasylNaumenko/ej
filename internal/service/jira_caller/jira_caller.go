@@ -5,7 +5,7 @@ import (
 
 	"github.com/rs/zerolog"
 
-	"ej/internal/repository"
+	"github.com/vasylNaumenko/ej/internal/repository"
 )
 
 // Service defines the jira_caller service

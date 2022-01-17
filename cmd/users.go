@@ -3,7 +3,7 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	"ej/internal/service/jira_caller"
+	"github.com/vasylNaumenko/ej/internal/service/jira_caller"
 )
 
 // usersCmd represents the users command

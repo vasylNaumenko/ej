@@ -3,8 +3,8 @@ package cmd
 import (
 	"github.com/spf13/cobra"
 
-	repoCfg "ej/internal/repository/config"
-	serviceCfg "ej/internal/service/config"
+	repoCfg "github.com/vasylNaumenko/ej/internal/repository/config"
+	serviceCfg "github.com/vasylNaumenko/ej/internal/service/config"
 )
 
 // reviewersCmd represents the reviewers command

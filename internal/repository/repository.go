@@ -1,6 +1,6 @@
 package repository
 
-import "ej/internal/domain/config"
+import "github.com/vasylNaumenko/ej/internal/domain/config"
 
 type (
 	Jira interface {

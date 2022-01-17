@@ -1,8 +1,8 @@
 package notifier
 
 import (
-	"ej/internal/domain/config"
-	"ej/internal/repository"
+	"github.com/vasylNaumenko/ej/internal/domain/config"
+	"github.com/vasylNaumenko/ej/internal/repository"
 )
 
 // Service defines the notifier service

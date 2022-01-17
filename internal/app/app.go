@@ -5,10 +5,10 @@ import (
 
 	"github.com/rs/zerolog"
 
-	"ej/internal/domain/config"
-	"ej/internal/repository"
-	"ej/internal/repository/discord"
-	"ej/internal/repository/jira"
+	"github.com/vasylNaumenko/ej/internal/domain/config"
+	"github.com/vasylNaumenko/ej/internal/repository"
+	"github.com/vasylNaumenko/ej/internal/repository/discord"
+	"github.com/vasylNaumenko/ej/internal/repository/jira"
 )
 
 type (

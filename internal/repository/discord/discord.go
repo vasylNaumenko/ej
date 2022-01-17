@@ -8,7 +8,7 @@ import (
 	discord2 "github.com/DisgoOrg/disgo/discord"
 	"github.com/DisgoOrg/disgo/webhook"
 
-	"ej/internal/domain/config"
+	"github.com/vasylNaumenko/ej/internal/domain/config"
 )
 
 type (

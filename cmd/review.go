@@ -6,9 +6,9 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"ej/internal/domain/config"
-	"ej/internal/service/jira_caller"
-	"ej/internal/service/notifier"
+	"github.com/vasylNaumenko/ej/internal/domain/config"
+	"github.com/vasylNaumenko/ej/internal/service/jira_caller"
+	"github.com/vasylNaumenko/ej/internal/service/notifier"
 )
 
 const separator = ","
