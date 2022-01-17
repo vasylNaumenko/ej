@@ -5,6 +5,7 @@ import (
 	"os"
 	"strings"
 
+	"github.com/mitchellh/go-homedir"
 	"github.com/spf13/cobra"
 
 	"github.com/spf13/viper"
@@ -42,7 +43,7 @@ func init() {
 		initApp,
 	)
 
-	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "~/.ej.config.yaml", "config file (default is ~/.ej.config.yaml)")
+	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.ej.yaml)")
 	rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
 }
 
@@ -52,15 +53,16 @@ func initConfig() {
 		// Use config file from the flag.
 		viper.SetConfigFile(cfgFile)
 	} else {
-		path, err := os.Getwd()
+		// Find home directory.
+		home, err := homedir.Dir()
 		if err != nil {
 			fmt.Println(err)
 			os.Exit(1)
 		}
 
-		// Search config in home directory with name ".ej" (without extension).
-		viper.AddConfigPath(path)
-		viper.SetConfigName("config")
+		// Search config in home directory with name ".ej.config" (without extension).
+		viper.AddConfigPath(home)
+		viper.SetConfigName(".ej.config")
 		viper.SetConfigType("yaml")
 	}
 
