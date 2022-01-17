@@ -1,0 +1,19 @@
+# Jira integration
+BaseUrl: https://bptco.atlassian.net
+User: email@address
+Token: jiraToken
+MyAccountTag: n1
+
+# List of active users with their ids you can obtain with the command `get users`.
+Reviewers:
+  - ID: JiraID61d42f687c6f9800704
+    Tag: n1
+    Name: Name 1
+    Discord: 3445
+  - ID: JiraID61d42f687c6f9800704
+    Tag: n2
+    Name: Name 2
+    Discord: 1234
+
+# Discord integration
+DiscordWebHook: https://discord.com/api/webhooks/somehookinfo
