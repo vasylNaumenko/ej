@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/DisgoOrg/disgo v0.6.12
 	github.com/andygrunwald/go-jira v1.14.0
+	github.com/mitchellh/go-homedir v1.1.0
 	github.com/rs/zerolog v1.26.1
 	github.com/spf13/cobra v1.3.0
 	github.com/spf13/viper v1.10.0

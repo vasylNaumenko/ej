@@ -5,7 +5,6 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
-
 	"github.com/vasylNaumenko/ej/internal/domain/config"
 	"github.com/vasylNaumenko/ej/internal/service/jira_caller"
 	"github.com/vasylNaumenko/ej/internal/service/notifier"
@@ -24,9 +23,9 @@ var reviewCmd = &cobra.Command{
 	Short: "Creates tasks for review of your MR.",
 	Long: `Creates tasks for review of yours merge request.
 	Examples:
-		review [issue-id] [MR link] -t=tag1,tag2 (creates tasks for the tag1 and the tag2 assignees)
-		review [issue-id] [MR link] -t=tag1 -r=1  (creates tasks for the tag1 assignee and plus a random one)	
-		review [issue-id] [MR link] -r=2  (creates tasks for the 2 random reviewers)
+		review [issue-id] [MR link1,MR link2...] -t=tag1,tag2 (creates tasks for the tag1 and the tag2 assignees)
+		review [issue-id] [MR link1,MR link2...] -t=tag1 -r=1  (creates tasks for the tag1 assignee and plus a random one)	
+		review [issue-id] [MR link1,MR link2...] -r=2  (creates tasks for the 2 random reviewers)
 `,
 	Run: func(cmd *cobra.Command, args []string) {
 		app := getApp()
@@ -75,11 +74,13 @@ var reviewCmd = &cobra.Command{
 			assigneeList = append(assigneeList, assigneeListRandom...)
 		}
 
+		description := strings.ReplaceAll(args[1], separator, "\n")
+
 		// Creating the tasks and generating the links.
 		ids := assigneeList.GetSliceOfIDs()
 		links, err := jira_caller.
 			NewService(app.RepoJira, app.Logger).
-			CreateReviewIssue(args[0], args[1], ids)
+			CreateReviewIssue(args[0], description, ids)
 		exitIfError(err)
 
 		err = notifier.NewService(app.RepoNotifier).Notify(assigneeList, links)
