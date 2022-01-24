@@ -25,9 +25,9 @@ Available Commands:
 ej review -h
 Creates the tasks for for review of yours merge request.
 	Examples:
-		review [issue-id] [MR link] -t=tag1,tag2 (creates tasks for the tag1 and the tag2 assignees)
-		review [issue-id] [MR link] -t=tag1 -r=1  (creates tasks for the tag1 assignee and plus a random one)
-		review [issue-id] [MR link] -r=2  (creates tasks for the 2 random reviewers)
+		review [issue-id] [MR link1,MR link2...] -t=tag1,tag2 (creates tasks for the tag1 and the tag2 assignees)
+		review [issue-id] [MR link1,MR link2...] -t=tag1 -r=1  (creates tasks for the tag1 assignee and plus a random one)
+		review [issue-id] [MR link1,MR link2...] -r=2  (creates tasks for the 2 random reviewers)
 
 Usage:
   ej review [flags]
