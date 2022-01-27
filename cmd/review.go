@@ -56,7 +56,12 @@ var reviewCmd = &cobra.Command{
 
 		// select assignees by tags
 		var assigneeList config.Assignees
-		tags := strings.Split(assignees, separator)
+		var tags []string
+
+		if assignees != "" {
+			tags = strings.Split(assignees, separator)
+		}
+
 		for _, tag := range tags {
 			reviewer, err := app.Config.Reviewers.GetByTag(tag)
 			if err != nil {
@@ -68,7 +73,7 @@ var reviewCmd = &cobra.Command{
 
 		// Select or adding a random assignees.
 		if randomCount > 0 {
-			assigneeListRandom, err := app.Config.Reviewers.GetRandom(2, excludeList...)
+			assigneeListRandom, err := app.Config.Reviewers.GetRandom(randomCount, excludeList...)
 			exitIfError(err)
 
 			assigneeList = append(assigneeList, assigneeListRandom...)
